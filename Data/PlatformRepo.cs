@@ -2,15 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using PlatformService.Models;
-using PlatformServie.Data;
 
 namespace PlatformService.Data
 {
-    public class PlatfromRepo : IPlatformRepo
+    public class PlatformRepo : IPlatformRepo
     {
         private readonly AppDbContext _context;
 
-        public PlatfromRepo(AppDbContext context)
+        public PlatformRepo(AppDbContext context)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
