@@ -65,6 +65,7 @@ namespace PlatformService.Controllers
         }
 
         [HttpDelete("{id}")]
+        [ProducesResponseType(typeof(PlatformReadDto), (int)HttpStatusCode.OK)]
         public ActionResult<PlatformReadDto> DeletePlatform(int id)
         {
             var deletedPlatform = _repository.DeletePlatform(id);
