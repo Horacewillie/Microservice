@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using PlatformService.Models;
 
 namespace PlatformService.Data
@@ -25,7 +26,7 @@ namespace PlatformService.Data
 
         }
 
-        //SeedData needs AppDbContext
+        //SeedData using AppDbContext
         private static void SeedData(AppDbContext context)
         {
             if (!context.Platforms.Any())

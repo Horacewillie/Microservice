@@ -13,6 +13,21 @@ namespace PlatformService.Data
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
+
+        public Platform DeletePlatform(int id)
+        {
+           var platform = _context.Platforms.FirstOrDefault(p => p.Id == id);
+           {
+               if(platform != null)
+               {
+                   _context.Platforms.Remove(platform);
+                   return platform;
+               }
+
+               throw new ArgumentNullException(nameof(platform));
+           }
+        }
+
         void IPlatformRepo.CreatePlatform(Platform platform)
         {
            if(platform == null)
