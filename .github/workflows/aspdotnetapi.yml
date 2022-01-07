@@ -8,7 +8,7 @@ on:
   
 
 jobs:
-  build-and-text:
+  build-and-test:
 
     runs-on: ${{ matrix.os }}
     strategy:
